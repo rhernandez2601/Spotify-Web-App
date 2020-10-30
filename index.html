@@ -1,5 +1,26 @@
-<html>
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="UTF-8"/> 
+        <title>Sporify</title>
+        <link href="style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+     
+    <body> 
+        <p> listening to <u><a target="_blank" id="song_title"></a></u> by <span id="artist"></span> </p>
 
+        <script> 
+        var request = new XMLHttpRequest();
 
+        request.open("GET", "/.netlify/functions/app", true);
+        request.send();
 
+        request.onload = function() {
+            document.getElementById("song_title").innerHTML = JSON.parse(request.responseText).song_name;
+            document.getElementById("artist").innerHTML = JSON.parse(request.responseText).artist; 
+            document.getElementById("song_title").setAttribute("href", JSON.parse(request.responseText).song_url);
+        }
+        </script>        
+    </body> 
 </html>
