@@ -3,6 +3,7 @@ body  {
     font-size:  40px;
     padding:  35vh  10px  40vh  10px;
     background-color:  #a5c2e7;
+    font-family: 'Nunito', sans-serif;
 }
 
 #song_title,  #artist  {
