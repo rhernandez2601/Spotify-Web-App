@@ -1,6 +1,6 @@
-const { response } = require('express');
+//const { response } = require('express');
 const express = require('express');
-const { request } = require('http');
+//const { request } = require('http');
 const serverless = require('serverless-http');
 
 const app = express();
@@ -9,10 +9,10 @@ const router = express.Router();
 
 router.get("/", (req, response) => {
     const request = require('request');
+
     // const client_id = "37eaba6e04e343259fc399757e7e2e75";
     // const client_secret = "80ef3f8e3de94432933dc6ce1cfd7e63";
     // const refresh_token = "AQBqj-IBVGiwslYFL3nG-ZQkA8Ze_blO1uAMhIn0BzRRrRywz1GfbnNt9bpvQ38wRCNXBeRKe3UbSXVbKVo3eXOA9vEui8uj6Ce1aSbCynCGXz0eUcwkTyt-5um7MorZSNw";
-
     const client_id = process.env.CLIENT_ID;
     const client_secret = process.env.CLIENT_SECRET;
     const refresh_token = process.env.REFRESH_TOKEN;
