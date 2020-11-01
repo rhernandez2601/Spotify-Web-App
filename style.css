@@ -3,7 +3,12 @@ body  {
     font-size:  40px;
     padding:  35vh  10px  40vh  10px;
     background-color:  #a5c2e7;
-    font-family: 'Nunito', sans-serif;
+    font-family: fantasy;
+    font-size: 35px;
+    font-style: normal;
+    font-variant: small-caps;
+    font-weight: 400;
+    line-height: 70px;
 }
 
 #song_title,  #artist  {
@@ -13,8 +18,4 @@ body  {
 
 #song_title:hover  {
     opacity:  0.6;
-}
-
-button.homeButton {
-    
 }
