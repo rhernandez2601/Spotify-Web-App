@@ -36,7 +36,7 @@ router.get("/", (req, response) => {
                     artist = track.artists[0].name;
                     song_url = track.external_urls.spotify;
                     artist_url = track.album.artists[0].external_urls.spotify;
-                    response.json({ "song_name": song_name, "artist": artist, "song_url": song_url });
+                    response.json({ "song_name": song_name, "artist": artist, "song_url": song_url, "artist_url": artist_url });
                 });
             } else {
                 var body_text = JSON.parse(body);
@@ -44,7 +44,7 @@ router.get("/", (req, response) => {
                 artist = (body_text.item.artists)[0].name;
                 song_url = body_text.item.external_urls.spotify;
                 artist_url = body_text.items.artists[0].external_urls.spotify;
-                response.json({ "song_name": song_name, "artist": artist, "song_url": song_url });
+                response.json({ "song_name": song_name, "artist": artist, "song_url": song_url, "artist_url": artist_url });
             }
         });
 
