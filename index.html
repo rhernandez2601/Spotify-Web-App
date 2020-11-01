@@ -25,7 +25,8 @@
 
         request.onload = function() {
             document.getElementById("song_title").innerHTML = JSON.parse(request.responseText).song_name;
-            document.getElementById("artist").innerHTML = JSON.parse(request.responseText).artist; 
+            document.getElementById("artist").innerHTML = JSON.parse(request.responseText).artist;
+            document.getElementById("artist").setAttribute("href", JSON.parse(request.responseText).artist_url);
             document.getElementById("song_title").setAttribute("href", JSON.parse(request.responseText).song_url);
         }
         </script>        
