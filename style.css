@@ -2,7 +2,7 @@ body  {
     text-align:  center;
     font-size:  40px;
     padding:  35vh  10px  40vh  10px;
-    background-color:  #a5c2e7;
+    background-color: linear-gradient(to right, #0f0c29, #474094, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
     font-family: fantasy;
     font-size: 75px;
     font-style: normal;
