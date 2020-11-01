@@ -33,17 +33,25 @@ router.get("/", (req, response) => {
                     var body_text = JSON.parse(body);
                     var track = body_text.items[0].track;
                     song_name = track.name;
-                    artist = track.artists[0].name;
+                    if (track.artists.length > 0) {
+                        artist = track.artists[0].name;
+                    }
                     song_url = track.external_urls.spotify;
-                    artist_url = track.album.artists[0].external_urls.spotify;
+                    if (track.album.artists.length > 0) {
+                        artist_url = track.album.artists[0].external_urls.spotify;
+                    }
                     response.json({ "song_name": song_name, "artist": artist, "song_url": song_url, "artist_url": artist_url });
                 });
             } else {
                 var body_text = JSON.parse(body);
                 song_name = body_text.item.name;
-                artist = body_text.item.artists[0].name;
+                if (body_text.item.artists > 0) {
+                    artist = body_text.item.artists[0].name;
+                }
                 song_url = body_text.item.external_urls.spotify;
-                artist_url = body_text.items.artists[0].external_urls.spotify;
+                if (body_text.item.artists > 0) {
+                    artist_url = body_text.item.artists[0].external_urls.spotify;
+                }
                 response.json({ "song_name": song_name, "artist": artist, "song_url": song_url, "artist_url": artist_url });
             }
         });
