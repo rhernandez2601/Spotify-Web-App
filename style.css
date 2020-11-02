@@ -12,10 +12,14 @@ body  {
 }
 
 #song_title,  #artist  {
-    text-decoration:  none;
+    text-decoration: none;
     color:  #569fac;
 } 
 
-#song_title, #artist:hover  {
+#song_title:hover  {
     opacity:  0.6;
+}
+
+#artist:hover {
+    opacity: 0.6;
 }
