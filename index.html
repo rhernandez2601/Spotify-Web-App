@@ -1,37 +1,42 @@
-<!DOCTYPE html> 
-<html> 
-    <head> 
-        <meta charset="UTF-8"/> 
-        <title>Sporify</title>
-        <link href="style.css" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
-    </head>
+<!DOCTYPE html>
+<html>
 
-    <body> 
-        <!-- <header>
+<head>
+    <meta charset="UTF-8" />
+    <title>Sporify</title>
+    <link href="style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- <header>
             <button class="homeButton">HOME</button>
             <input placeholder="Search a song to comment on"></input>
             <button class="wwChat">World Wide CHAT</button>
         </header>     -->
 
+    <div id="album_image">
         <p>Listening to</p>
-        <p><u><a target="_blank" id="song_title"></a></u></p> 
-        <p>by</p> 
+        <p><u><a target="_blank" id="song_title"></a></u></p>
+        <p>by</p>
         <p><u><a target="_blank" id="artist"></a></u></p>
+    </div>
 
-        <script> 
+    <script>
         var request = new XMLHttpRequest();
 
         request.open("GET", "/.netlify/functions/app", true);
         request.send();
 
-        request.onload = function() {
+        request.onload = function () {
             document.getElementById("song_title").innerHTML = JSON.parse(request.responseText).song_name;
             document.getElementById("artist").innerHTML = JSON.parse(request.responseText).artist;
             document.getElementById("artist").setAttribute("href", JSON.parse(request.responseText).artist_url);
             document.getElementById("song_title").setAttribute("href", JSON.parse(request.responseText).song_url);
+            document.getElementById("album_image").setAttribute("style", "background-image: url('" + JSON.parse(request.responseText).album_image) + "');");
         }
-        </script>        
-    </body> 
+    </script>
+</body>
+
 </html>
