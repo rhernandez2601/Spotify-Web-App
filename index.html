@@ -34,7 +34,9 @@
             document.getElementById("artist").innerHTML = JSON.parse(request.responseText).artist;
             document.getElementById("artist").setAttribute("href", JSON.parse(request.responseText).artist_url);
             document.getElementById("song_title").setAttribute("href", JSON.parse(request.responseText).song_url);
-            document.getElementById("album_image").setAttribute("style", "background-image: url('" + JSON.parse(request.responseText).album_image) + "');");
+            document.getElementById("album_image")
+                .setAttribute("style",
+                    "background-image: url('" + JSON.parse(request.responseText).album_image + "');");
         }
     </script>
 </body>
