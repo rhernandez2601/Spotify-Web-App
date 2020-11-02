@@ -36,7 +36,7 @@
             document.getElementById("song_title").setAttribute("href", JSON.parse(request.responseText).song_url);
             document.getElementById("album_image")
                 .setAttribute("style",
-                    "background-image: url('" + JSON.parse(request.responseText).album_image + "');");
+                    "background-image: url('" + JSON.parse(request.responseText).album_image + "'); width:'100%'");
         }
     </script>
 </body>
