@@ -17,10 +17,12 @@
         </header>     -->
 
     <div id="album_image">
-        <p>Listening to</p>
-        <p><u><a target="_blank" id="song_title"></a></u></p>
-        <p>by</p>
-        <p><u><a target="_blank" id="artist"></a></u></p>
+        <div id="musicText">
+            <p>Listening to</p>
+            <p><u><a target="_blank" id="song_title"></a></u></p>
+            <p>by</p>
+            <p><u><a target="_blank" id="artist"></a></u></p>
+        </div>
     </div>
 
     <script>
@@ -36,7 +38,7 @@
             document.getElementById("song_title").setAttribute("href", JSON.parse(request.responseText).song_url);
             document.getElementById("album_image")
                 .setAttribute("style",
-                    "background-image: url('" + JSON.parse(request.responseText).album_image + "'); width:'100%'");
+                    "background-image: url('" + JSON.parse(request.responseText).album_image + "'); background-repeat:no-repeat; background-position:center; opacity: 50%");
         }
     </script>
 </body>

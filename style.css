@@ -12,6 +12,10 @@ body  {
     color: rgb(196, 143, 30);
 }
 
+#musicText {
+    opacity: 100%;
+}
+
 #song_title,  #artist  {
     text-decoration: none;
     color:  #569fac;
