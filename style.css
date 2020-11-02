@@ -16,6 +16,6 @@ body  {
     color:  #569fac;
 } 
 
-#song_title:hover  {
+#song_title, #artist:hover  {
     opacity:  0.6;
 }
