@@ -45,13 +45,13 @@ router.get("/", (req, response) => {
             } else {
                 var body_text = JSON.parse(body);
                 song_name = body_text.item.name;
-                if (body_text.item.artists > 0) {
+                // if (body_text.item.artists > 0) {
                     artist = body_text.item.artists[0].name;
-                }
+                // }
                 song_url = body_text.item.external_urls.spotify;
-                if (body_text.item.artists > 0) {
+                // if (body_text.item.artists > 0) {
                     artist_url = body_text.item.artists[0].external_urls.spotify;
-                }
+                // }
                 response.json({ "song_name": song_name, "artist": artist, "song_url": song_url, "artist_url": artist_url });
             }
         });
